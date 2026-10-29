@@ -1,0 +1,220 @@
+.team-bars {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  color: #1d1d1f;
+  font-family: var(--font-tencent);
+}
+
+.team-bars .team-bars-heading {
+  display: flex;
+  align-items: center;
+  flex: 0 0 65px;
+  padding: 0 8px 18px;
+}
+
+.team-bars .team-bars-heading h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -.8px;
+}
+
+.team-bars .team-bars-list {
+  display: grid;
+  grid-template-rows: repeat(var(--team-bars-count), minmax(0, 1fr));
+  flex: 1;
+  min-height: 0;
+  padding: 15px 24px;
+  background: #fff;
+  border-radius: 22px;
+  isolation: isolate;
+}
+
+.team-bars .team-bars-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 48px minmax(100px, 220px) minmax(0, 1fr) var(--team-bars-score-width);
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 0;
+  color: #1d1d1f;
+  background: transparent;
+}
+
+.team-bars .team-bars-place {
+  position: relative;
+  color: #99999f;
+  font-size: 22px;
+  font-weight: 450;
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.6px;
+}
+
+.team-bars .team-bars-place-1 .team-bars-place { color: #d9364e; font-weight: 600; }
+.team-bars .team-bars-place-2 .team-bars-place,
+.team-bars .team-bars-place-3 .team-bars-place { color: #727278; }
+
+.team-bars .team-bars-place-1 { --podium-avatar-scale: 1.24; --podium-bar-scale: 1.6; }
+.team-bars .team-bars-place-2,
+.team-bars .team-bars-place-3 { --podium-avatar-scale: 1.18; --podium-bar-scale: 1.45; }
+
+.team-bars .team-bars-movement {
+  position: absolute;
+  right: -10px;
+  top: -8px;
+  display: flex;
+  color: #d9364e;
+}
+.team-bars .team-bars-movement-down { color: #8b8b93; }
+
+.team-bars .team-bars-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 52px;
+  transform: scale(var(--podium-avatar-scale, 1));
+  transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.team-bars .team-bars-avatar img {
+  display: block;
+  width: 39px;
+  height: 45px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+.team-bars .team-bars-place-1 .team-bars-avatar img,
+.team-bars .team-bars-place-2 .team-bars-avatar img,
+.team-bars .team-bars-place-3 .team-bars-avatar img { width: 45px; height: 51px; }
+
+.team-bars .team-bars-name {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  color: #1d1d1f;
+  font-size: 29px;
+  font-weight: 550;
+  line-height: 1.25;
+  letter-spacing: -.65px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.team-bars .team-bars-chart {
+  position: relative;
+  min-width: 0;
+  height: 17px;
+}
+.team-bars .team-bars-track {
+  position: absolute;
+  inset: 0;
+  background: #f3f3f5;
+  border-radius: 6px;
+}
+.team-bars .team-bars-bar-space { position: absolute; inset: 0; }
+.team-bars .team-bars-track,
+.team-bars .team-bars-bar-space {
+  transform: scaleY(var(--podium-bar-scale, 1));
+  transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.team-bars .team-bars-chart-diverging .team-bars-bar-positive { left: 50%; }
+.team-bars .team-bars-chart-diverging .team-bars-bar-negative { right: 50%; }
+.team-bars .team-bars-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.team-bars .team-bars-zero {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: -4px;
+  bottom: -4px;
+  width: 1px;
+  background: #c8c8ce;
+}
+
+.team-bars .team-bars-score {
+  display: block;
+  width: auto;
+  min-width: 0;
+  color: #1d1d1f;
+  font-size: var(--team-bars-score-size);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.team-bars .team-bars-score number-flow-react { --number-flow-char-height: 1.05em; }
+
+.team-bars .team-bars-delta-anchor {
+  position: absolute;
+  z-index: 3;
+  top: -10px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.team-bars .team-bars-delta {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 2px 6px;
+  color: #d9364e;
+  background: #fff9fa;
+  border-radius: 7px;
+  font-size: 28px;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 0 0 3px #fff;
+}
+.team-bars .team-bars-delta-negative { color: #66666e; background: #f1f1f4; }
+
+.team-bars.team-bars-hidden .team-bars-place,
+.team-bars.team-bars-hidden .team-bars-score { color: #aaaab1; }
+
+.team-bars.team-bars-dense .team-bars-list { padding-top: 10px; padding-bottom: 10px; }
+.team-bars.team-bars-dense .team-bars-row { grid-template-columns: 29px 34px minmax(100px, 220px) minmax(0, 1fr) var(--team-bars-score-width); gap: 14px; }
+.team-bars.team-bars-dense .team-bars-place { font-size: 18px; }
+.team-bars.team-bars-dense .team-bars-avatar { width: 34px; height: 34px; }
+.team-bars.team-bars-dense .team-bars-avatar img { width: 29px; height: 32px; }
+.team-bars.team-bars-dense .team-bars-place-1,
+.team-bars.team-bars-dense .team-bars-place-2,
+.team-bars.team-bars-dense .team-bars-place-3 { --podium-avatar-scale: 1.1; }
+.team-bars.team-bars-dense .team-bars-name { font-size: 23px; }
+.team-bars.team-bars-dense .team-bars-chart { height: 12px; }
+.team-bars.team-bars-dense .team-bars-delta { font-size: 21px; padding: 1px 4px; }
+.team-bars.team-bars-dense .team-bars-delta-anchor { top: -3px; }
+
+.team-bars.team-bars-reduced .team-bars-avatar,
+.team-bars.team-bars-reduced .team-bars-track,
+.team-bars.team-bars-reduced .team-bars-bar-space { transition: none; }
+
+@media (prefers-contrast: more) {
+  .team-bars .team-bars-place { color: #66666e; }
+  .team-bars .team-bars-track { background: #e6e6eb; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-bars .team-bars-row { transform: none !important; }
+  .team-bars .team-bars-avatar,
+  .team-bars .team-bars-track,
+  .team-bars .team-bars-bar-space { transition: none; }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "red-flower-offsite-panel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/prepare-static.mjs",
+    "test": "vitest run",
+    "start": "node server.cjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@number-flow/react": "0.6.2",
+    "canvas-confetti": "1.9.4",
+    "lucide-react": "1.61.0",
+    "motion": "14.6.0",
+    "papaparse": "5.7.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "read-excel-file": "9.3.12"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "1.9.0",
+    "@types/papaparse": "5.5.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

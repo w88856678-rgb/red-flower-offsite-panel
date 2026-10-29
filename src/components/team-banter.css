@@ -1,0 +1,134 @@
+.team-bars { --banter-ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
+
+.team-bars .team-banter-status {
+  min-width: 0;
+  margin-left: auto;
+  padding-left: 28px;
+  overflow: hidden;
+  color: #85858d;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.team-banter-status i { padding: 0 9px; color: #d9364e; font-style: normal; }
+.team-banter-status > span { animation: banter-status 180ms var(--banter-ease-out) both; }
+
+.team-bars .team-banter-caster,
+.team-bars .team-banter-hit { position: relative; z-index: 4; }
+.team-bars .team-banter-celebrate > img { animation: banter-celebrate 700ms var(--banter-ease-out) 2; }
+.team-bars .team-banter-casting > img { animation: banter-cast 300ms var(--banter-ease-out) both; }
+.team-bars .team-banter-hit > img { animation: banter-hit 280ms var(--banter-ease-out) 2; }
+
+.team-banter-crown {
+  position: absolute;
+  top: -10px;
+  left: 11px;
+  color: #d9364e;
+  fill: #fff;
+  animation: banter-crown 2100ms var(--banter-ease-out) both;
+}
+.team-banter-bubble {
+  position: absolute;
+  top: -23px;
+  left: 45px;
+  padding: 6px 12px;
+  border: 1px solid #efd9dd;
+  border-radius: 10px 10px 10px 2px;
+  background: #fff;
+  color: #c7354c;
+  font-family: var(--font-tencent);
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+  animation: banter-bubble 2100ms var(--banter-ease-out) both;
+  transform-origin: left bottom;
+}
+
+.team-banter-overlay {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.team-banter-battlefield { position: absolute; inset: 0; overflow: hidden; }
+.team-banter-trails { position: absolute; inset: 0; overflow: visible; opacity: 0; animation: banter-trail 1500ms 350ms var(--banter-ease-out) both; }
+.team-banter-trails path { fill: none; stroke: #e62e4b; stroke-width: 2px; stroke-dasharray: 3 7; stroke-linecap: round; }
+.team-banter-projectile { position: absolute; top: 0; left: 0; width: 44px; height: 44px; object-fit: contain; opacity: 0; }
+.team-banter-projectile-meteor { filter: drop-shadow(0 0 9px #e82c4f44); }
+.team-banter-charge { position: absolute; width: 0; height: 0; }
+.team-banter-charge > span { position: absolute; left: -24px; top: -24px; width: 48px; height: 48px; border: 2px solid #e62e4b; border-radius: 50%; box-shadow: 0 0 16px #ee3b5a44; animation: banter-charge-ring 650ms var(--banter-ease-out) both; }
+.team-banter-charge img { position: absolute; left: -25px; top: -25px; width: 50px; height: 50px; object-fit: contain; animation: banter-charge-flower 650ms var(--banter-ease-out) both; }
+.team-banter-beam { position: absolute; height: 0; transform-origin: left center; }
+.team-banter-beam-body { position: absolute; inset: 0; transform-origin: left center; animation: banter-beam 850ms 350ms var(--banter-ease-out) both; }
+.team-banter-beam-glow { position: absolute; left: 0; right: 0; top: -10px; height: 20px; background: #e8274b24; border-radius: 50%; box-shadow: 0 0 16px #ec285040, 0 0 5px #ec28503d; }
+.team-banter-beam-core { position: absolute; left: 0; right: 0; top: -2.5px; height: 5px; background: #f43f61; border-radius: 8px; box-shadow: 0 0 0 1px #fff9, 0 0 8px #f43f61aa; }
+.team-banter-target-cue { position: absolute; width: 0; height: 0; color: #d9364e; }
+.team-banter-hit-ring { position: absolute; top: -24px; left: -24px; width: 48px; height: 48px; border: 2px solid #e62e4b; border-radius: 50%; animation: banter-ring 650ms var(--banter-ease-out) both; }
+.team-banter-hit-ring-echo { animation-delay: 140ms; }
+.team-banter-skill-laser .team-banter-hit-ring { top: -30px; left: -30px; width: 60px; height: 60px; box-shadow: 0 0 12px #e62e4b33; }
+.team-banter-skill-meteor .team-banter-hit-ring { top: -35px; left: -35px; width: 70px; height: 70px; border-width: 3px; }
+.team-banter-petal { position: absolute; left: 0; top: 0; width: 9px; height: 16px; border-radius: 70% 35% 70% 35%; background: #e53250; opacity: 0; }
+.team-banter-petal-large { width: 13px; height: 21px; }
+.team-banter-star { position: absolute; font-size: 23px; line-height: 1; animation: banter-star 950ms var(--banter-ease-out) both; }
+.team-banter-star-one { top: -36px; left: -27px; }
+.team-banter-star-two { top: -32px; left: 18px; font-size: 17px; animation-delay: 80ms; }
+.team-banter-star-three { top: 13px; left: 5px; font-size: 13px; animation-delay: 140ms; }
+.team-banter-static-hit { position: absolute; bottom: 20px; left: -64px; padding: 4px 8px; border-radius: 6px; color: #c7354c; background: #fff0f2; font-size: 16px; line-height: 1.2; white-space: nowrap; }
+
+.team-bars-dense .team-banter-crown { top: -11px; left: 7px; width: 20px; height: 20px; }
+.team-bars-dense .team-banter-bubble { top: -19px; left: 30px; padding: 4px 8px; font-size: 17px; }
+.team-banter-bubble-challenge { font-size: 19px; }
+.team-banter-skill-challenge .team-banter-hit-ring { top: -18px; left: -18px; width: 36px; height: 36px; }
+
+@keyframes banter-status { from { opacity: 0; } to { opacity: 1; } }
+@keyframes banter-celebrate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  32% { transform: translateY(-7px) rotate(-7deg); }
+  65% { transform: translateY(-2px) rotate(6deg); }
+}
+@keyframes banter-cast {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  45% { transform: translateY(-4px) rotate(-8deg); }
+}
+@keyframes banter-hit {
+  0%, 100% { transform: rotate(0deg); }
+  28% { transform: rotate(-7deg); }
+  67% { transform: rotate(6deg); }
+}
+@keyframes banter-crown {
+  0% { opacity: 0; transform: translateY(4px) rotate(-9deg); }
+  12%, 85% { opacity: 1; transform: translateY(0) rotate(-9deg); }
+  100% { opacity: 0; transform: translateY(4px) rotate(-9deg); }
+}
+@keyframes banter-bubble {
+  0% { opacity: 0; transform: translateY(4px) scale(.95); }
+  10%, 86% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(4px) scale(.95); }
+}
+@keyframes banter-trail { 0%, 100% { opacity: 0; } 25%, 68% { opacity: .24; } }
+@keyframes banter-ring { from { opacity: .6; transform: scale(.9); } to { opacity: 0; transform: scale(1.7); } }
+@keyframes banter-star { 0% { opacity: 0; transform: translateY(4px) scale(.95); } 18%, 65% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-6px) scale(.95); } }
+@keyframes banter-charge-ring { 0% { opacity: 0; transform: scale(1.45); } 35%, 52% { opacity: .8; transform: scale(.95); } 100% { opacity: 0; transform: scale(1.2); } }
+@keyframes banter-charge-flower { 0% { opacity: 0; transform: scale(.95) rotate(-16deg); } 40%, 70% { opacity: 1; transform: scale(1.15) rotate(8deg); } 100% { opacity: 0; transform: scale(.95) rotate(16deg); } }
+@keyframes banter-beam { 0% { opacity: 0; transform: scaleX(.025); } 18% { opacity: 1; transform: scaleX(1); } 65% { opacity: 1; transform: scaleX(1); } 100% { opacity: 0; transform: scaleX(1); } }
+
+.team-bars-reduced .team-banter-caster > img,
+.team-bars-reduced .team-banter-hit > img,
+.team-bars-reduced .team-banter-crown,
+.team-bars-reduced .team-banter-bubble,
+.team-bars-reduced .team-banter-status > span { animation: none; }
+.team-bars-reduced .team-banter-caster,
+.team-bars-reduced .team-banter-hit { border-radius: 12px; background: #fff0f2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .team-bars .team-banter-caster > img,
+  .team-bars .team-banter-hit > img,
+  .team-bars .team-banter-crown,
+  .team-bars .team-banter-bubble,
+  .team-bars .team-banter-status > span { animation: none; }
+  .team-banter-projectile, .team-banter-trails, .team-banter-hit-ring, .team-banter-star, .team-banter-petal, .team-banter-beam, .team-banter-charge { display: none; }
+}
